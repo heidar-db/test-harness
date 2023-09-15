@@ -14,24 +14,23 @@ pipeline:
     - stage:
         name: bikin-php.html
         identifier: bikinphphtml
-        description: ""
         type: CI
         spec:
           cloneCodebase: true
           execution:
             steps:
               - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
                   spec:
-                    connectorRef: handalrepo
-                    repo: handalin/test-harness
-                    tags:
-                      - v1
+                    shell: Bash
+                    command: |-
+                      touch index.html
+                      echo "hai sayang aku" > index.html
           platform:
             os: Linux
             arch: Amd64
           runtime:
-            type: Docker
+            type: Cloud
             spec: {}
