@@ -28,3 +28,7 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
+        delegateSelectors:
+          - test
+        when:
+          pipelineStatus: All
