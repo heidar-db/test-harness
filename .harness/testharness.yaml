@@ -20,15 +20,16 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: Run
-                  name: Run_1
-                  identifier: Run_1
+                  type: GitClone
+                  name: GitClone_1
+                  identifier: GitClone_1
                   spec:
-                    shell: Sh
-                    command: |-
-                      touch index.html
-                      echo "hai sayang aku" > index.html
-                  description: cuss
+                    connectorRef: heidargit
+                    repoName: test-harness
+                    build:
+                      type: branch
+                      spec:
+                        branch: main
           platform:
             os: Linux
             arch: Amd64
