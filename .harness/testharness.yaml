@@ -24,10 +24,11 @@ pipeline:
                   name: Run_1
                   identifier: Run_1
                   spec:
-                    shell: Powershell
+                    shell: Sh
                     command: |-
                       touch index.html
                       echo "hai sayang aku" > index.html
+                  description: cuss
           platform:
             os: Linux
             arch: Amd64
