@@ -1,0 +1,37 @@
+pipeline:
+  name: test-harness
+  identifier: testharness
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: heidargit
+        repoName: test-harness
+        build: <+input>
+  stages:
+    - stage:
+        name: bikin-php.html
+        identifier: bikinphphtml
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: handalrepo
+                    repo: handalin/test-harness
+                    tags:
+                      - v1
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
