@@ -24,7 +24,7 @@ pipeline:
                   name: Run_1
                   identifier: Run_1
                   spec:
-                    shell: Bash
+                    shell: Powershell
                     command: |-
                       touch index.html
                       echo "hai sayang aku" > index.html
