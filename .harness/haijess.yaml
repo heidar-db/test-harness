@@ -1,0 +1,30 @@
+pipeline:
+  name: haijess
+  identifier: haijess
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: buat file
+        identifier: buat_file
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "sayang aku kedua" >> index.html
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
